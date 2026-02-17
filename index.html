@@ -1,8 +1,43 @@
 <!DOCTYPE html>
 <html>
-<body style="margin:0; background:white;">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<img src="menu.png" style="width:100%;">
+<!-- Preload for faster loading -->
+<link rel="preload" as="image" href="menu.jpg">
+
+<style>
+html, body {
+    margin: 0;
+    padding: 0;
+    background: white;
+    overflow: hidden;
+}
+
+/* Rotated container */
+.menu-container {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100vh;
+    transform: rotate(90deg);
+    transform-origin: top left;
+}
+
+/* Image styling */
+.menu-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+</style>
+</head>
+
+<body>
+
+<div class="menu-container">
+    <img src="menu.jpg" alt="Sweet Stop Menu">
+</div>
 
 </body>
 </html>
