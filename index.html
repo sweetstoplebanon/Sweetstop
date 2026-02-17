@@ -1,3 +1,70 @@
-<div style="text-align:center; margin:20px 0;">
-  <img src="sweetstop menu.png" alt="Sweet Stop Menu" style="width:100%; max-width:600px; border-radius:10px;">
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+html, body {
+    margin: 0;
+    padding: 0;
+    background: black;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Fullscreen rotated image */
+.menu-image {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100vh;
+    height: 100vw;
+    transform: translate(-50%, -50%) rotate(90deg);
+    object-fit: cover;
+    display: none; /* hidden until button click */
+}
+
+/* Button styling */
+.fullscreen-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px 30px;
+    font-size: 18px;
+    background: #c49b6c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<button class="fullscreen-btn" onclick="openFullscreen()">
+View Menu Full Screen
+</button>
+
+<img src="sweetstop-menu.png" class="menu-image" id="menuImage">
+
+<script>
+function openFullscreen() {
+    let elem = document.documentElement;
+
+    if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+    } else if (elem.webkitRequestFullscreen) {
+        elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) {
+        elem.msRequestFullscreen();
+    }
+
+    document.querySelector(".fullscreen-btn").style.display = "none";
+    document.getElementById("menuImage").style.display = "block";
+}
+</script>
+
+</body>
+</html>
