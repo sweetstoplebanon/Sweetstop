@@ -3,28 +3,23 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Preload for faster loading -->
-<link rel="preload" as="image" href="menu.png">
-
 <style>
 html, body {
     margin: 0;
-    padding: 0;
     background: white;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
-/* Rotated container */
+/* Rotated layout */
 .menu-container {
-    position: absolute;
-    top: 0;
-    left: 100%;
     width: 100vh;
     transform: rotate(90deg);
     transform-origin: top left;
+    position: absolute;
+    top: 0;
+    left: 100%;
 }
 
-/* Image styling */
 .menu-container img {
     width: 100%;
     height: auto;
@@ -32,11 +27,10 @@ html, body {
 }
 </style>
 </head>
-
 <body>
 
 <div class="menu-container">
-    <img src="menu.png" alt="Sweet Stop Menu">
+    <img src="menu.jpg" loading="eager">
 </div>
 
 </body>
