@@ -1,18 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-  body {
+body {
     margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-  }
+    background: black;
+    overflow: hidden;
+}
 
-  .menu-img {
+.rotated-image {
+    position: fixed;
+    top: 50%;
+    left: 50%;
     width: 100vh;
-    height: auto;
-    transform: rotate(90deg);
-    transform-origin: center;
-    display: block;
-    margin: auto;
-  }
+    height: 100vw;
+    transform: translate(-50%, -50%) rotate(90deg);
+    object-fit: cover;
+}
 </style>
+</head>
+<body>
 
-<img src="sweetstop-menu.jpg" class="menu-img">
+<img src="sweetstop-menu.png" class="rotated-image">
+
+</
