@@ -1,73 +1,8 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<body style="margin:0; background:white;">
 
-<style>
-html, body {
-    margin: 0;
-    padding: 0;
-    background: black;
-    height: 100%;
-    overflow: hidden;
-}
-
-/* Image always loaded */
-.menu-image {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 100vh;
-    height: 100vw;
-    transform: translate(-50%, -50%) rotate(90deg);
-    object-fit: cover;
-    opacity: 0;              /* hidden instead of display:none */
-    transition: opacity 0.3s ease;
-}
-
-/* Button */
-.fullscreen-btn {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 15px 30px;
-    font-size: 18px;
-    background: #c49b6c;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-}
-</style>
-</head>
-
-<body>
-
-<button class="fullscreen-btn" id="btn">
-View Menu Full Screen
-</button>
-
-<img src="menu.png" class="menu-image" id="menuImage">
-
-<script>
-document.getElementById("btn").addEventListener("click", function() {
-
-    let elem = document.documentElement;
-
-    if (elem.requestFullscreen) {
-        elem.requestFullscreen();
-    } else if (elem.webkitRequestFullscreen) {
-        elem.webkitRequestFullscreen();
-    } else if (elem.msRequestFullscreen) {
-        elem.msRequestFullscreen();
-    }
-
-    // Show image after fullscreen starts
-    document.getElementById("menuImage").style.opacity = "1";
-    document.getElementById("btn").style.display = "none";
-});
-</script>
+<img src="menu.png" style="width:100%;">
 
 </body>
 </html>
