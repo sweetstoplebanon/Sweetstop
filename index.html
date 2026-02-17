@@ -12,7 +12,7 @@ html, body {
     overflow: hidden;
 }
 
-/* Fullscreen rotated image */
+/* Image always loaded */
 .menu-image {
     position: fixed;
     top: 50%;
@@ -21,10 +21,11 @@ html, body {
     height: 100vw;
     transform: translate(-50%, -50%) rotate(90deg);
     object-fit: cover;
-    display: none; /* hidden until button click */
+    opacity: 0;              /* hidden instead of display:none */
+    transition: opacity 0.3s ease;
 }
 
-/* Button styling */
+/* Button */
 .fullscreen-btn {
     position: absolute;
     top: 50%;
@@ -43,14 +44,15 @@ html, body {
 
 <body>
 
-<button class="fullscreen-btn" onclick="openFullscreen()">
+<button class="fullscreen-btn" id="btn">
 View Menu Full Screen
 </button>
 
 <img src="sweetstop-menu.png" class="menu-image" id="menuImage">
 
 <script>
-function openFullscreen() {
+document.getElementById("btn").addEventListener("click", function() {
+
     let elem = document.documentElement;
 
     if (elem.requestFullscreen) {
@@ -61,9 +63,10 @@ function openFullscreen() {
         elem.msRequestFullscreen();
     }
 
-    document.querySelector(".fullscreen-btn").style.display = "none";
-    document.getElementById("menuImage").style.display = "block";
-}
+    // Show image after fullscreen starts
+    document.getElementById("menuImage").style.opacity = "1";
+    document.getElementById("btn").style.display = "none";
+});
 </script>
 
 </body>
